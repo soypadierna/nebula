@@ -18,7 +18,7 @@ class NebulaApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'Nebula',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,

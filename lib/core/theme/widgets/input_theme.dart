@@ -16,8 +16,8 @@ InputDecorationTheme inputTheme() {
       borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(color: AppColors.gray500)
     ),
-    hintStyle: TextStyle(fontSize: 14, color: AppColors.gray500),
-    labelStyle: TextStyle(fontSize: 14, color: AppColors.gray500),
+    hintStyle: TextStyle(color: AppColors.gray500),
+    labelStyle: TextStyle(color: AppColors.gray500),
     prefixIconColor: AppColors.gray700,
     suffixIconColor: AppColors.gray700,
   );

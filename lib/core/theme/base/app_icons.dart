@@ -4,7 +4,7 @@ class AppIcons {
   static const String _path = 'icons/';
 
   static SvgPicture nebulaLight({
-    double size = 24,
+    double size = 16,
   }) =>
       SvgPicture.asset(
         '${_path}nebula.svg',
@@ -13,7 +13,7 @@ class AppIcons {
       );
 
   static SvgPicture nebulaDark({
-    double size = 24,
+    double size = 16,
   }) =>
       SvgPicture.asset(
         '${_path}nebula_dark.svg',
@@ -22,7 +22,7 @@ class AppIcons {
       );
 
   static SvgPicture google({
-    double size = 24,
+    double size = 16,
   }) =>
       SvgPicture.asset(
         '${_path}google.svg',
@@ -31,7 +31,7 @@ class AppIcons {
       );
 
   static SvgPicture microsoft({
-    double size = 24,
+    double size = 16,
   }) =>
       SvgPicture.asset(
         '${_path}microsoft.svg',

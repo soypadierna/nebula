@@ -12,6 +12,8 @@ static const Color error = Color(0xFFEF4444);
 static const Color success = Color(0xFF22C55E);
 static const Color warning = Color(0xFFF59E0B);
 
+static const Color white = Color(0xFFFFFFFF); 
+
 static const Color gray100 = Color(0xFFF5F5F5);
 static const Color gray200 = Color(0xFFE2E2E2);
 static const Color gray300 = Color(0xFFD4D4D4);

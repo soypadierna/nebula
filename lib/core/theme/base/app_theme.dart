@@ -12,5 +12,6 @@ class AppTheme {
     inputDecorationTheme: inputTheme(),
     filledButtonTheme: filledButtonTheme(),
     textSelectionTheme: textSelectionTheme(),
+    chipTheme: chipTheme(),
   );
 }

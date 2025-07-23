@@ -31,7 +31,7 @@ class AppTypography {
 
     labelLarge: TextStyle(
       fontSize: 12,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
     ),
     labelMedium: TextStyle(
       fontSize: 10,

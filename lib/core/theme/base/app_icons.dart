@@ -1,7 +1,7 @@
 import 'package:svg_flutter/svg.dart';
 
 class AppIcons {
-  static const String _path = 'icons/';
+  static const String _path = 'assets/icons/';
 
   static SvgPicture nebulaLight({
     double size = 16,

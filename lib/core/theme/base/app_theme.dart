@@ -13,6 +13,7 @@ class AppTheme {
     filledButtonTheme: filledButtonTheme(),
     textSelectionTheme: textSelectionTheme(),
     chipTheme: chipTheme(),
-    dividerTheme: dividerTheme()
+    dividerTheme: dividerTheme(),
+    textButtonTheme: textButtonTheme(),
   );
 }

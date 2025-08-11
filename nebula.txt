@@ -1,0 +1,27 @@
+nebula/
+├── lib/
+│   ├── core/                 # Lógica reutilizable, helpers, constantes, temas, servicios base
+│   │   ├── config/           # Configuración global (AppConfig, envs, inits)
+│   │   ├── constants/        # Constantes de la app
+│   │   ├── errors/           # Manejo de errores global
+│   │   ├── routes/           # Sistema de rutas
+│   │   ├── services/         # Servicios generales (logger, localStorage, etc.)
+│   │   ├── theme/            # Temas y estilos globales
+│   │   └── utils/            # Funciones y extensiones reutilizables
+│   ├── features/
+│   │   ├── auth/             # Módulo de autenticación
+│   │   │   ├── data/
+│   │   │   ├── domain/
+│   │   │   └── presentation/
+│   │   ├── documents/        # Módulo de documentos
+│   │   ├── folders/          # Módulo de carpetas
+│   │   ├── dashboard/        # Pantalla principal
+│   │   └── settings/         # Configuración de la cuenta, tema, etc.
+│   ├── shared/               # Widgets y componentes reutilizables
+│   ├── main.dart             # Entry point
+│   └── injection.dart        # Configuración de dependencias
+├── assets/                   # Imágenes, íconos, fuentes
+├── test/                     # Carpeta de pruebas unitarias y de widgets
+├── web/                      # Archivos específicos de Flutter Web
+├── pubspec.yaml              # Dependencias y configuración
+└── README.md

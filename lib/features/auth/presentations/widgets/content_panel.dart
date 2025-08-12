@@ -16,20 +16,21 @@ class ContentPanel extends StatelessWidget {
         padding: const EdgeInsets.all(36),
         constraints: const BoxConstraints(
           maxWidth: 800,
-          maxHeight: 384,
+          maxHeight: 528,
           minHeight: 384,
           minWidth: 400,
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(16),
           color: Colors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             NebulaLogo(size: 40),
             const SizedBox(height: 24),
-            Expanded(child: child),
+            child,
           ],
         ),
       ),

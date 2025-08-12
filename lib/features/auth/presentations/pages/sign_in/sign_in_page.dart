@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nebula/core/responsive/responsive.dart';
@@ -13,6 +12,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveLayout(
       mobile: SignInFormMobile(),
+      tablet: SignInFormTablet(),
       desktop: SignInFormDesktop(),
     );
   }
@@ -27,39 +27,73 @@ class SignInFormMobile extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            NebulaLogo(size: 80),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Sing In",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 8),
-                SignInSocialOptions(),
-                Divider(),
-                SignInEmailInput(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Don't have an account? "),
-                    TextButton(onPressed: () {}, child: Text("Sign Up")),
-                  ],
-                ),
-              ],
-            ),
-          ],
+        child: ConstrainedBox(
+                  constraints: BoxConstraints(minWidth: 420),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              NebulaLogo(size: 80),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Sing In",
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 8),
+                  SignInSocialOptions(),
+                  Divider(),
+                  SignInEmailInput(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-//TODO: Crear diseño de tablet
+class SignInFormTablet extends StatelessWidget {
+  const SignInFormTablet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 48),
+        child: ContentPanel(
+          child: Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "Sign In",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 24),
+                ConstrainedBox(
+                  constraints: BoxConstraints(minWidth: 380, maxWidth: 380),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SignInSocialOptions(),
+                      Divider(),
+                      SignInEmailInput(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class SignInFormDesktop extends StatelessWidget {
   const SignInFormDesktop({super.key});
@@ -72,6 +106,7 @@ class SignInFormDesktop extends StatelessWidget {
         child: ContentPanel(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //TODO: Ver si se personaiza esta configuracion del titulo
               Text(
@@ -83,6 +118,7 @@ class SignInFormDesktop extends StatelessWidget {
                 constraints: BoxConstraints(maxWidth: 320),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     SignInSocialOptions(),
                     Divider(),
@@ -105,8 +141,9 @@ class SignInSocialOptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        const Text("Sign up with open account"),
+        const Text("Sign in with open account"),
         const SizedBox(height: 12),
         Wrap(
           children: [
@@ -135,6 +172,7 @@ class SignInEmailInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         const Text("Or continue with email address"),
         const SizedBox(height: 12),
@@ -147,6 +185,15 @@ class SignInEmailInput extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         FilledButtonCustom(onPressed: () {}, label: "Continue"),
+        Center(
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text("Don't have an account? "),
+              TextButton(onPressed: () {}, child: Text("Sign Up")),
+            ],
+          ),
+        ),
       ],
     );
   }

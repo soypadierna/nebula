@@ -23,31 +23,36 @@ class SignInFormMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScrollableScaffold(
       backgroundColor: AppColors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: ConstrainedBox(
-                  constraints: BoxConstraints(minWidth: 420),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              NebulaLogo(size: 80),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Sing In",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  SignInSocialOptions(),
-                  Divider(),
-                  SignInEmailInput(),
-                ],
-              ),
-            ],
+      padding: const EdgeInsets.all(24),
+      body: Center(
+        child: IntrinsicHeight(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 420),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                NebulaLogo(size: 80),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Sing In",
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    SignInSocialOptions(),
+                    Divider(),
+                    SignInEmailInput(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

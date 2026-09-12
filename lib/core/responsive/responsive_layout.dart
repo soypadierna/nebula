@@ -29,8 +29,7 @@ class ResponsiveLayout extends StatelessWidget {
           );
         } else if (constraints.maxWidth <= Breakpoints.maxMobile) {
           return mobile;
-        } else if (constraints.maxWidth <= Breakpoints.maxTablet &&
-            constraints.maxWidth > Breakpoints.maxMobile) {
+        } else if (constraints.maxWidth <= Breakpoints.maxTablet) {
           return tablet;
         } else {
           return desktop;

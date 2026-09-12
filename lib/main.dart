@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'core/theme/theme.dart';
+import 'package:nebula/core/theme/theme.dart';
+import 'package:nebula/features/auth/presentations/pages/sign_in/sign_in_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,8 +23,12 @@ class NebulaApp extends ConsumerWidget {
       title: 'Nebula',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
+      // darkTheme: AppTheme.dark,
       themeMode: ref.watch(themeProvider),
+
+      home: SignInPage(),
+
+
       //TODO: configurar navegación
       // routerConfig: appRouter,
 
